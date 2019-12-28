@@ -4,10 +4,8 @@ function n(n){
     return n > 9 ? "" + n: "0" + n;
 }
 export default function Session(props) {
-    const minutes = Math.floor((props.distance % (60 * 60)) / 60);
-    const seconds = Math.floor(
-        props.distance % 60
-      )
+    const minutes = Math.floor(props.distance / 60);
+    const seconds = Math.floor(props.distance - minutes * 60)
   return (
     <div>
       <h5 id="timer-label">{props.mode}</h5>

@@ -19,14 +19,16 @@ class App extends React.Component {
     return (
       <div className="App">
         <audio
-          src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
-          type="audio/mpeg"
+          src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Cracow_trumpet_signal.ogg"
+          type="audio/ogg"
           className="clip"
           id="beep"
         />
         <div className="container">
           <div class="jumbotron mt-5">
-            <h3 class="display-4">Pomodoro Clock</h3>
+            <h3 class="display-4" id="app-title">
+              Pomodoro Clock
+            </h3>
             <hr class="my-4" />
 
             <Control
@@ -80,14 +82,16 @@ class App extends React.Component {
     const newState = { ...this.state };
     newState.breakLength += update;
     newState.distanceBreak = 60 * newState.breakLength;
-    if (newState.breakLength >= 0) this.setState(newState);
+    if (newState.breakLength >= 1 && newState.breakLength <= 60)
+      this.setState(newState);
   };
 
   updateSession = update => {
     const newState = { ...this.state };
     newState.sessionLength += update;
     newState.distanceSession = 60 * newState.sessionLength;
-    if (newState.sessionLength >= 0) this.setState(newState);
+    if (newState.sessionLength >= 1 && newState.sessionLength <= 60)
+      this.setState(newState);
   };
 
   togglePause = () => {
@@ -116,11 +120,15 @@ class App extends React.Component {
     console.log("state - after reset: " + JSON.stringify(this.state));
   };
 
+  stopAlarm = () => {
+    const sound = document.getElementById("beep");
+    sound.pause();
+    sound.currentTime = 0;
+  };
+
   alarm = () => {
-    console.log("ALARM");
-    const elem = document.getElementById("beep");
-    console.log("AUDIO + " + elem);
-    elem.play();
+    const sound = document.getElementById("beep");
+    sound.play();
   };
 
   timer = () => {

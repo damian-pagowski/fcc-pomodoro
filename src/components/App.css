@@ -1,13 +1,19 @@
 .App {
   text-align: center;
   color: #fff;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.2rem;
 }
 
+#app-title {
+  font-family: "Shadows Into Light", cursive;
+  letter-spacing: 0.4rem;
+}
 #timer-control button {
   margin: 0 auto;
 }
 .jumbotron {
-  max-width: 500px;
+  width: 500px;
   margin: auto;
   background-color: rgb(255, 99, 71) !important;
 }
