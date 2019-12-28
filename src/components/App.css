@@ -13,8 +13,13 @@
 }
 .alert {
   width: 60%;
+  border: 1px solid;
+  border-radius: 0 !important;
 }
 
 .input-group-prepend {
   margin-left: 3rem;
+}
+#timer-label {
+  text-transform: capitalize;
 }

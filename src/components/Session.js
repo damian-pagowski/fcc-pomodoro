@@ -10,7 +10,7 @@ export default function Session(props) {
       )
   return (
     <div>
-      <h5 id="timer-label">Session</h5>
+      <h5 id="timer-label">{props.mode}</h5>
       <h1>
         <span class="badge badge-danger" id="time-left">
           {`${n(minutes)}:${n(seconds)}`}

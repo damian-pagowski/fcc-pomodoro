@@ -14,7 +14,8 @@ export default function Control(props) {
             onClick={() => props.onUpdate(-1)}
             disabled={props.data.disabled}
           >
-            -
+                        <i class="fa fa-minus"></i>
+
           </button>
         </div>
 
@@ -29,7 +30,7 @@ export default function Control(props) {
             onClick={() => props.onUpdate(1)}
             disabled={props.data.disabled}
           >
-            +
+            <i class="fa fa-plus"></i>
           </button>
         </div>
       </div>

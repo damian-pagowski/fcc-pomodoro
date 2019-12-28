@@ -18,6 +18,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <audio
+          src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+          type="audio/mpeg"
+          className="clip"
+          id="beep"
+        />
         <div className="container">
           <div class="jumbotron mt-5">
             <h3 class="display-4">Pomodoro Clock</h3>
@@ -56,7 +62,12 @@ class App extends React.Component {
             <Session
               onReset={this.reset}
               onPause={this.togglePause}
-              distance={this.state.distance}
+              distance={
+                this.state.currentMode == "session"
+                  ? this.state.distanceSession
+                  : this.state.distanceBreak
+              }
+              mode={this.state.currentMode}
               isRunning={this.state.isRunning}
             />
           </div>
@@ -107,6 +118,9 @@ class App extends React.Component {
 
   alarm = () => {
     console.log("ALARM");
+    const elem = document.getElementById("beep");
+    console.log("AUDIO + " + elem);
+    elem.play();
   };
 
   timer = () => {
