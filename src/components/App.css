@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+  color: #fff;
+}
+
+#timer-control button {
+  margin: 0 auto;
+}
+.jumbotron {
+  max-width: 500px;
+  margin: auto;
+  background-color: rgb(255, 99, 71) !important;
+}
+.alert {
+  width: 60%;
+}
+
+.input-group-prepend {
+  margin-left: 3rem;
+}
