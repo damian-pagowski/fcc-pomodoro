@@ -1,9 +1,8 @@
 import React from "react";
 
-
 export default function Timer(props) {
-    const minutes = Math.floor(props.distance / 60);
-    const seconds = Math.floor(props.distance - minutes * 60)
+  const minutes = Math.floor(props.distance / 60);
+  const seconds = Math.floor(props.distance - minutes * 60);
   return (
     <div>
       <h5 id="timer-label">{props.mode}</h5>
@@ -12,7 +11,7 @@ export default function Timer(props) {
           {`${n(minutes)}:${n(seconds)}`}
         </span>
       </h1>
-
+      <hr class="my-4" />
       <span id="timer-control" class="input-group mb-3">
         <button
           className="btn btn-danger"
@@ -33,6 +32,6 @@ export default function Timer(props) {
   );
 }
 
-function n(n){
-  return n > 9 ? "" + n: "0" + n;
+function n(n) {
+  return n > 9 ? "" + n : "0" + n;
 }
