@@ -1,9 +1,7 @@
 import React from "react";
 
-function n(n){
-    return n > 9 ? "" + n: "0" + n;
-}
-export default function Session(props) {
+
+export default function Timer(props) {
     const minutes = Math.floor(props.distance / 60);
     const seconds = Math.floor(props.distance - minutes * 60)
   return (
@@ -33,4 +31,8 @@ export default function Session(props) {
       </span>
     </div>
   );
+}
+
+function n(n){
+  return n > 9 ? "" + n: "0" + n;
 }

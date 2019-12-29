@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Control from "./Control";
-import Session from "./Session";
+import Timer from "./Timer";
 
 class App extends React.Component {
   state = {
@@ -61,7 +61,7 @@ class App extends React.Component {
             />
 
             <hr class="my-4" />
-            <Session
+            <Timer
               onReset={this.reset}
               onPause={this.togglePause}
               distance={
@@ -118,6 +118,7 @@ class App extends React.Component {
       intervalId: null,
     });
     console.log("state - after reset: " + JSON.stringify(this.state));
+    this.stopAlarm()
   };
 
   stopAlarm = () => {
